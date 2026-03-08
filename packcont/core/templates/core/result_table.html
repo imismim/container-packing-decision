@@ -1,0 +1,106 @@
+<style>
+  .result-table { border-collapse: collapse; width: 100%; background: #fff; }
+  .result-table th, .result-table td {
+    border: 1px solid #333;
+    padding: 6px 10px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .result-table thead th { background: #d9d9d9; font-weight: bold; }
+  .result-table td:first-child { background: #d9d9d9; font-weight: bold; }
+  .result-table th.section-header { background: #bfbfbf; }
+</style>
+
+{% if analytical_min1 %}
+
+<div class="table-wrapper mb-4">
+  <table class="result-table">
+    <thead>
+      <tr>
+        <th>Дані</th>
+        <th>Аналітичний розрахунок (кількість контейнерів)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1 рядок</td><td>{{ analytical_min1 }}</td></tr>
+      <tr><td>2 рядок</td><td>{{ analytical_min2 }}</td></tr>
+      <tr><td>3 рядок</td><td>{{ analytical_min3 }}</td></tr>
+      <tr><td>1+2+3 рядок</td><td>{{ analytical_min123 }}</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="table-wrapper">
+  <table class="result-table">
+    <thead>
+      <!-- Unsorted section header -->
+      <tr>
+        <th rowspan="3" class="section-header">Дані</th>
+        <th colspan="4">Кількість контейнерів</th>
+        <th colspan="4">Обчислювальна складність</th>
+      </tr>
+      <tr>
+        <th colspan="4">Без впорядкування</th>
+        <th colspan="4">Без впорядкування</th>
+      </tr>
+      <tr>
+        <th>NFA</th><th>FFA</th><th>WFA</th><th>BFA</th>
+        <th>NFA</th><th>FFA</th><th>WFA</th><th>BFA</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1 рядок</td>
+        <td>{{ nfa1_rows }}</td><td>{{ ffa1_rows }}</td><td>{{ wfa1_rows }}</td><td>{{ bfa1_rows }}</td>
+        <td>{{ algorithm_complexity_nfa1 }}</td><td>{{ algorithm_complexity_ffa1 }}</td><td>{{ algorithm_complexity_wfa1 }}</td><td>{{ algorithm_complexity_bfa1 }}</td>
+      </tr>
+      <tr>
+        <td>2 рядок</td>
+        <td>{{ nfa2_rows }}</td><td>{{ ffa2_rows }}</td><td>{{ wfa2_rows }}</td><td>{{ bfa2_rows }}</td>
+        <td>{{ algorithm_complexity_nfa2 }}</td><td>{{ algorithm_complexity_ffa2 }}</td><td>{{ algorithm_complexity_wfa2 }}</td><td>{{ algorithm_complexity_bfa2 }}</td>
+      </tr>
+      <tr>
+        <td>3 рядок</td>
+        <td>{{ nfa3_rows }}</td><td>{{ ffa3_rows }}</td><td>{{ wfa3_rows }}</td><td>{{ bfa3_rows }}</td>
+        <td>{{ algorithm_complexity_nfa3 }}</td><td>{{ algorithm_complexity_ffa3 }}</td><td>{{ algorithm_complexity_wfa3 }}</td><td>{{ algorithm_complexity_bfa3 }}</td>
+      </tr>
+      <tr>
+        <td>1+2+3 рядок</td>
+        <td>{{ nfa123_rows }}</td><td>{{ ffa123_rows }}</td><td>{{ wfa123_rows }}</td><td>{{ bfa123_rows }}</td>
+        <td>{{ algorithm_complexity_nfa123 }}</td><td>{{ algorithm_complexity_ffa123 }}</td><td>{{ algorithm_complexity_wfa123 }}</td><td>{{ algorithm_complexity_bfa123 }}</td>
+      </tr>
+      <!-- Sorted section header rows -->
+      <tr>
+        <th rowspan="2" class="section-header">Дані</th>
+        <th colspan="4">З впорядкуванням</th>
+        <th colspan="4">З впорядкуванням</th>
+      </tr>
+      <tr>
+        <th>NFA</th><th>FFA</th><th>WFA</th><th>BFA</th>
+        <th>NFA</th><th>FFA</th><th>WFA</th><th>BFA</th>
+      </tr>
+      <tr>
+        <td>1 рядок</td>
+        <td>{{ nfa1s_rows }}</td><td>{{ ffa1s_rows }}</td><td>{{ wfa1s_rows }}</td><td>{{ bfa1s_rows }}</td>
+        <td>{{ algorithm_complexity_nfa1s }}</td><td>{{ algorithm_complexity_ffa1s }}</td><td>{{ algorithm_complexity_wfa1s }}</td><td>{{ algorithm_complexity_bfa1s }}</td>
+      </tr>
+      <tr>
+        <td>2 рядок</td>
+        <td>{{ nfa2s_rows }}</td><td>{{ ffa2s_rows }}</td><td>{{ wfa2s_rows }}</td><td>{{ bfa2s_rows }}</td>
+        <td>{{ algorithm_complexity_nfa2s }}</td><td>{{ algorithm_complexity_ffa2s }}</td><td>{{ algorithm_complexity_wfa2s }}</td><td>{{ algorithm_complexity_bfa2s }}</td>
+      </tr>
+      <tr>
+        <td>3 рядок</td>
+        <td>{{ nfa3s_rows }}</td><td>{{ ffa3s_rows }}</td><td>{{ wfa3s_rows }}</td><td>{{ bfa3s_rows }}</td>
+        <td>{{ algorithm_complexity_nfa3s }}</td><td>{{ algorithm_complexity_ffa3s }}</td><td>{{ algorithm_complexity_wfa3s }}</td><td>{{ algorithm_complexity_bfa3s }}</td>
+      </tr>
+      <tr>
+        <td>1+2+3 рядок</td>
+        <td>{{ nfa123s_rows }}</td><td>{{ ffa123s_rows }}</td><td>{{ wfa123s_rows }}</td><td>{{ bfa123s_rows }}</td>
+        <td>{{ algorithm_complexity_nfa123s }}</td><td>{{ algorithm_complexity_ffa123s }}</td><td>{{ algorithm_complexity_wfa123s }}</td><td>{{ algorithm_complexity_bfa123s }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+{% endif %}

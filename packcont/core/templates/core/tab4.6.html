@@ -1,0 +1,24 @@
+<div class="container-fluid mt-5 px-4">
+    <div class="row g-4">
+        {% if nfa123s %}
+        <div class="col-12">
+        {% include 'core/table.html' with name="NFA сортовані дані" table=nfa123s rows=nfa123s_rows cols=nfa123s_cols %}
+        </div>
+        {% endif %}
+        {% if ffa123s %}
+        <div class="col-12">
+        {% include 'core/table.html' with name="FFA сортовані дані" table=ffa123s rows=ffa123s_rows cols=ffa123s_cols %}
+        </div>
+        {% endif %}
+        {% if wfa123s %}
+        <div class="col-12">
+        {% include 'core/table.html' with name="WFA сортовані дані" table=wfa123s rows=wfa123s_rows cols=wfa123s_cols %}
+        </div>
+        {% endif %}
+        {% if bfa123s %}
+        <div class="col-12">
+        {% include 'core/table.html' with name="BFA сортовані дані" table=bfa123s rows=bfa123s_rows cols=bfa123s_cols %}
+        </div>
+        {% endif %}
+    </div>
+</div>

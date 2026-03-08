@@ -1,0 +1,93 @@
+<div class="container-fluid">
+  <ul class="nav nav-tabs" id="resultTabs44" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="tab44-items1" data-bs-toggle="tab" data-bs-target="#pane44-items1" type="button" role="tab">Items 1 </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="tab44-items2" data-bs-toggle="tab" data-bs-target="#pane44-items2" type="button" role="tab">Items 2</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="tab44-items3" data-bs-toggle="tab" data-bs-target="#pane44-items3" type="button" role="tab">Items 3</button>
+    </li>
+  </ul>
+  <div class="tab-content border border-top-0 p-4 bg-white" id="resultTabsContent44">
+    <div class="tab-pane fade show active" id="pane44-items1" role="tabpanel">
+      <div class="container-fluid mt-5 px-4">
+        <div class="row g-4">
+          {% if nfa1 %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="NFA сортовані дані" table=nfa1s rows=nfa1s_rows cols=nfa1s_cols %}
+          </div>
+          {% endif %}
+          {% if ffa1 %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="FFA сортовані дані" table=ffa1s rows=ffa1s_rows cols=ffa1s_cols %}
+          </div>
+          {% endif %}
+          {% if wfa1 %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="WFA сортовані дані" table=wfa1s rows=wfa1s_rows cols=wfa1s_cols %}
+          </div>
+          {% endif %}
+          {% if bfa1 %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="BFA сортовані дані" table=bfa1s rows=bfa1s_rows cols=bfa1s_cols %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pane44-items2" role="tabpanel">
+      <div class="container-fluid mt-5 px-4">
+        <div class="row g-4">
+          {% if nfa2s %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="NFA сортовані дані" table=nfa2s rows=nfa2s_rows cols=nfa2s_cols %}
+          </div>
+          {% endif %}
+          {% if ffa2s %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="FFA сортовані дані" table=ffa2s rows=ffa2s_rows cols=ffa2s_cols %}
+          </div>
+          {% endif %}
+          {% if wfa2s %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="WFA сортовані дані" table=wfa2s rows=wfa2s_rows cols=wfa2s_cols %}
+          </div>
+          {% endif %}
+          {% if bfa2s %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="BFA сортовані дані" table=bfa2s rows=bfa2s_rows cols=bfa2s_cols %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="pane44-items3" role="tabpanel">
+      <div class="container-fluid mt-5 px-4">
+        <div class="row g-4">
+          {% if nfa3s %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="NFA сортовані дані" table=nfa3s rows=nfa3s_rows cols=nfa3s_cols %}
+          </div>
+          {% endif %}
+          {% if ffa3s %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="FFA сортовані дані" table=ffa3s rows=ffa3s_rows cols=ffa3s_cols %}
+          </div>
+          {% endif %}
+          {% if wfa3s %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="WFA сортовані дані" table=wfa3s rows=wfa3s_rows cols=wfa3s_cols %}
+          </div>
+          {% endif %}
+          {% if bfa3s %}
+          <div class="col-12">
+            {% include 'core/table.html' with name="BFA сортовані дані" table=bfa3s rows=bfa3s_rows cols=bfa3s_cols %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
