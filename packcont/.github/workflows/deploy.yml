@@ -1,0 +1,35 @@
+name: Deploy to Heroku
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      APP_NAME: ${{ secrets.HEROKU_APP_NAME }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Heroku CLI
+        run: curl https://cli-assets.heroku.com/install.sh | sh
+
+      - name: Push to Heroku
+        run: |
+          git remote add heroku https://heroku:$HEROKU_API_KEY@git.heroku.com/$APP_NAME.git
+          git push heroku ${{ github.ref_name }}:main --force
+
+      - name: Run Migrations
+        run: heroku run --exit-code python manage.py migrate --app $APP_NAME
+
+      - name: Collect Static Files
+        run: heroku run --exit-code "python manage.py collectstatic --noinput" --app $APP_NAME
+
+      - name: Scale Dynos
+        run: |
+          heroku ps:scale web=1 --app $APP_NAME

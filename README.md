@@ -46,7 +46,8 @@ Each algorithm is run in both **unsorted** and **pre-sorted** (descending) modes
 
 - **Backend**: Django 6.0.3, Python 3.13
 - **Frontend**: Bootstrap 5.3.3
-- **Database**: SQLite3
+- **Static files**: WhiteNoise
+- **Production server**: Gunicorn
 
 ---
 
@@ -71,6 +72,33 @@ python manage.py runserver
 ```
 
 Open `http://127.0.0.1:8000/` and select a variant or enter custom data.
+
+---
+
+## Deploy to Heroku
+
+> Requires [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) and a free Heroku account.
+
+```bash
+cd packcont                          # directory with manage.py and Procfile
+
+heroku login
+heroku create your-app-name
+
+heroku config:set SECRET_KEY='your-strong-secret-key'
+heroku config:set ALLOWED_HOSTS='your-app-name.herokuapp.com'
+
+git init                             # if not already a git repo
+git add .
+git commit -m "initial deploy"
+
+heroku git:remote -a your-app-name
+git push heroku main
+
+heroku open
+```
+
+No database migrations are required — the app stores no data.
 
 ---
 
